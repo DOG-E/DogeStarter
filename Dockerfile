@@ -18,4 +18,4 @@ ENV PATH="/home/userbot/bin:$PATH"
 RUN pip3 install --no-cache-dir -U -r requirements.txt
 
 # Run Doge
-CMD ["python3", "-m", "userbot"]
+CMD ["bash", "doger"]

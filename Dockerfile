@@ -10,7 +10,7 @@
 FROM sandy1709/catuserbot:slim-buster
 
 # Clone Doge repository + work directory + minor adjustment
-RUN git clone https://github.com/DOG-E/DogeUserBot.git /root/userbot
+RUN git clone https://github.com/DOG-E/DogeStarter.git /root/userbot
 WORKDIR /root/userbot
 ENV PATH="/home/userbot/bin:$PATH"
 

@@ -28,10 +28,6 @@
             "description": "Get this value from https://my.telegram.org/apps Please don't steal!",
             "value": ""
         },
-        "BOT_TOKEN": {
-            "description": "Create a bot at https://t.me/BotFather and get the token of your bot.",
-            "value": ""
-        },
         "STRING_SESSION": {
             "description": "Go to https://bit.do/DogessRepl and paste the code you get here.",
             "value": ""
@@ -55,6 +51,21 @@
         "ALIVE_NAME": {
             "description": "If you don't give name, I'll auto detect your name.",
             "value": "",
+            "required": false
+        },
+        "BOT_TOKEN": {
+            "description": "Create a bot at https://t.me/BotFather and get the token of your bot.",
+            "value": "",
+            "required": false
+        },
+        "DOGEPLUGIN": {
+            "description": "Do you want to activate extra plugins? Animation, fun, etc. includes plugins. If you open this, I'll automatically install all the plugins from our @DogePlugin channel. Write; True or False",
+            "value": "False",
+            "required": false
+        },
+        "DOGEHUB": {
+            "description": "Do you want to activate extra +18 obscene plugins? H*ntai, p*rn, etc. includes plugins. If you open this, I'll automatically install all the +18 plugins from our @DogeHUB channel. Write; True or False",
+            "value": "False",
             "required": false
         },
         "PMLOGGER": {

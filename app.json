@@ -40,9 +40,9 @@
             "description": "Add the Heroku app name you specified above here. It helps to keep Doge up to date.",
             "value": ""
         },
-        "DOGELANG": {
-            "description": "Doge should talk in which language?: Available languages: en, tr",
-            "value": "en"
+        "UPSTREAM_REPO_BRANCH": {
+            "description": "Doge should talk in which language?: Available languages: DOGE-EN, DOGE-TR",
+            "value": "DOGE-EN"
         },
         "ENV": {
             "description": "Setting this to ANYTHING will enable Heroku.",

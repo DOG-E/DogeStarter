@@ -12,22 +12,22 @@
 _gzl () {
     local regex
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "DogeUserBot" ]]
+    if [[ $UPSTREAM_REPO == "DOGE-EN" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0RPRy1FL0RvZ2VVc2VyQm90L2FyY2hpdmUvRE9HRS56aXA=" | base64 -d
-    elif [[ $UPSTREAM_REPO == "DogeUserBot" ]]
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0RPRy1FL0RvZ2VVc2VyQm90L2FyY2hpdmUvRE9HRS1FTi56aXA=" | base64 -d
+    elif [[ $UPSTREAM_REPO == "DOGE-TR" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0RPRy1FL0RvZ2VVc2VyQm90LnppcA==" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0RPRy1FL0RvZ2VVc2VyQm90L2FyY2hpdmUvRE9HRS1UUi56aXA=" | base64 -d
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         if [[ $UPSTREAM_REPO_BRANCH ]]
         then
             echo "${UPSTREAM_REPO}/archive/${UPSTREAM_REPO_BRANCH}.zip"
         else
-            echo "${UPSTREAM_REPO}/archive/DOGE.zip"
+            echo "${UPSTREAM_REPO}/archive/DOGE-EN.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0RPRy1FL0RvZ2VVc2VyQm90L2FyY2hpdmUvRE9HRS56aXA=" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0RPRy1FL0RvZ2VVc2VyQm90L2FyY2hpdmUvRE9HRS1FTi56aXA=" | base64 -d
     fi
 }
 
@@ -36,7 +36,10 @@ _grl () {
     local regex
     local rlink
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "DogeUserBot" ]]
+    if [[ $UPSTREAM_REPO == "DOGE-EN" ]]
+    then
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0RPRy1FL0RvZ2VVc2VyQm90" | base64 -d`
+    elif [[ $UPSTREAM_REPO == "DOGE-TR" ]]
     then
         rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0RPRy1FL0RvZ2VVc2VyQm90" | base64 -d`
     elif [[ $UPSTREAM_REPO =~ $regex ]]
@@ -59,17 +62,14 @@ _rDogeUserBot() {
 from git import Repo
 import sys
 
-OFFICIAL_UPSTREAM_REPO = "https://github.com/DOG-E/DogeUserBot"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/DOG-E/DogeStarter"
 ACTIVE_BRANCH_NAME = "DOGE"
 
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
 
 origin.fetch()
-try:
-    repo.create_head(ACTIVE_BRANCH_NAME, origin.refs[ACTIVE_BRANCH_NAME])
-except OSError:
-    pass
+repo.create_head(ACTIVE_BRANCH_NAME, origin.refs[ACTIVE_BRANCH_NAME])
 repo.heads[ACTIVE_BRANCH_NAME].checkout(True)
     ')
 }
@@ -82,16 +82,13 @@ from git import Repo
 import sys
 
 OFFICIAL_UPSTREAM_REPO="'$repolink'"
-ACTIVE_BRANCH_NAME = "'$UPSTREAM_REPO_BRANCH'" or "DOGE"
+ACTIVE_BRANCH_NAME = "'$UPSTREAM_REPO_BRANCH'" or "DOGE-EN"
 
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
 
 origin.fetch()
-try:
-    repo.create_head(ACTIVE_BRANCH_NAME, origin.refs[ACTIVE_BRANCH_NAME])
-except OSError:
-    pass
+repo.create_head(ACTIVE_BRANCH_NAME, origin.refs[ACTIVE_BRANCH_NAME])
 repo.heads[ACTIVE_BRANCH_NAME].checkout(True)
     ')
 }

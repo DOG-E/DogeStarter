@@ -2,23 +2,6 @@
     "addons": [{
         "plan": "heroku-postgresql"
     }],
-    "buildpacks": [{
-        "url": "https://github.com/TeleDoge/aria2-heroku.git"
-    },{
-        "url": "https://github.com/TeleDoge/heroku-buildpack-ffmpeg-latest.git"
-    },{
-        "url": "https://github.com/TeleDoge/heroku-buildpack-google-chrome.git"
-    },{
-        "url": "https://github.com/TeleDoge/heroku-buildpack-chromedriver.git"
-    },{
-        "url": "https://github.com/TeleDoge/heroku-buildpack-p7zip.git"
-    },{
-        "url": "https://github.com/TeleDoge/heroku-buildpack-apt.git"
-    },{
-        "url": "https://github.com/TeleDoge/heroku-buildpack-jq.git"
-    },{
-        "url": "heroku/python"
-    }],
     "env": {
         "APP_ID": {
             "description": "Get this value from https://my.telegram.org/apps Please don't steal!",

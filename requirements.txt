@@ -6,6 +6,7 @@ aiohttp
 apscheduler
 aria2p
 cairosvg
+chromedriver-autoinstaller
 cloudscraper
 colour
 countryinfo
